@@ -1,0 +1,17 @@
+spring:
+  sql:
+    init:
+      schema-locations: classpath*:db/h2/schema.sql
+      data-locations: classpath*:db/h2/data.sql
+  r2dbc:
+    url: r2dbc:h2:mem:///test;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    username: sa
+    password:
+h2:
+  console:
+    port: 8090
+logging:
+  level:
+    org:
+      springframework:
+        r2dbc: DEBUG # Spring Data R2DBC ??? ??? ??????? ?????? ??? ??? ??
